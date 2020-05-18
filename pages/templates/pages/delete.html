@@ -1,6 +1,6 @@
 {% extends 'pages/base.html' %}
 
-{% block title %}COMPLETE PAGE
+{% block title %}DELETE PAGE
 {% endblock title %}
 
 {% block content %}
@@ -17,7 +17,7 @@
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="name">TODO</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{task_pending.action}}" placeholder="Enter the todo Here">
+                        <input type="text" class="form-control" id="name" name="name" value="{{delete_task.action}}" placeholder="Enter the todo Here">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>

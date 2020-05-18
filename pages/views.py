@@ -35,7 +35,21 @@ def complete(request,pk):
         return redirect('/')
 
     task_pending = todo.objects.get(pk=pk)
+    print(task_pending.action)
+    task_pending.delete()
     context = {
         'task_pending' : task_pending
     }
     return render(request,'pages/complete.html',context)
+
+def delete(request,pk):
+    delete_task = todo.objects.get(pk=pk)
+    if request.method == "POST":
+        name = request.POST['name']
+        delete_task.delete()
+        return redirect('/')
+
+    context = {
+        'delete_task' : delete_task
+    }
+    return render(request,'pages/delete.html',context)

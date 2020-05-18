@@ -22,9 +22,8 @@
           <tr>
                 <td>{{a.action}}</td>
                 <td><form method="POST">{% csrf_token %}
-                <a href="/complete/{{a.id}}">
-                        complete
-                </a>
+                <a href="/complete/{{a.id}}">complete</a>
+                <a href="/delete/{{a.id}}">delete</a>
                 </form></td>
           </tr>
           {% endfor %}
