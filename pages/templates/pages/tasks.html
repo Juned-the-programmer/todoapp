@@ -1,0 +1,52 @@
+{% extends 'pages/base.html' %}
+
+<div class="card">
+            <div class="card-header bg-dark text-white">
+                PENDING TASKS
+            </div>
+            <div class="card-body m-3">
+ <div class="table-responsive">
+    <table class="table table-striped thead-dark table-bordered table">
+        <thead class="thead-dark">
+          <tr>
+                <th>TODO</th>
+                <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for a in data %}
+          <tr>
+                <td>{{a.action}}</td>
+                <td><button type="button" class="btn btn-outline-primary">COMPLETE</button></td>
+          </tr>
+          {% endfor %}
+         </tbody>
+      </table>
+</div>
+</div>
+</div>
+<div class="card">
+            <div class="card-header bg-dark text-white">
+                COMPLETE TASKS
+            </div>
+            <div class="card-body m-3">
+ <div class="table-responsive">
+    <table class="table table-striped thead-dark table-bordered table">
+        <thead class="thead-dark">
+          <tr>
+                <th>TODO</th>
+                <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for a in data %}
+          <tr>
+                <td>{{a.action}}</td>
+                <td>COMPLETED</td>
+          </tr>
+          {% endfor %}
+         </tbody>
+      </table>
+</div>
+</div>
+</div>
