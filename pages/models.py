@@ -4,6 +4,6 @@ class todo(models.Model):
     action = models.CharField(max_length=100)
     date_added = models.DateField(auto_now_add=True)
 
-class complete(models.Model):
+class Complete(models.Model):
     actioncomplete = models.CharField(max_length=100)
     date_completed = models.DateField(auto_now_add=True)

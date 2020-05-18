@@ -1,5 +1,9 @@
 {% extends 'pages/base.html' %}
 
+{% block title %}TODO APP
+{% endblock title %}
+
+{% block content %}
 <div class="card">
             <div class="card-header bg-dark text-white">
                 PENDING TASKS
@@ -14,10 +18,14 @@
           </tr>
         </thead>
         <tbody>
-            {% for a in data %}
+            {% for a in datapending %}
           <tr>
                 <td>{{a.action}}</td>
-                <td><button type="button" class="btn btn-outline-primary">COMPLETE</button></td>
+                <td><form method="POST">{% csrf_token %}
+                <a href="/complete/{{a.id}}">
+                        complete
+                </a>
+                </form></td>
           </tr>
           {% endfor %}
          </tbody>
@@ -39,9 +47,9 @@
           </tr>
         </thead>
         <tbody>
-            {% for a in data %}
+            {% for a in datacomplete %}
           <tr>
-                <td>{{a.action}}</td>
+                <td>{{a.actioncomplete}}</td>
                 <td>COMPLETED</td>
           </tr>
           {% endfor %}
@@ -50,3 +58,4 @@
 </div>
 </div>
 </div>
+{% endblock content %}
